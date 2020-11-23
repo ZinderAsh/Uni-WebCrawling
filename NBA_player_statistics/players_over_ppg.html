@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.8.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-55bbe34ec99b00387257935316262782"}, "mark": "bar", "encoding": {"color": {"type": "nominal", "field": "team", "title": "Team Name"}, "x": {"type": "quantitative", "field": "ppg", "title": "Points Per Game"}, "y": {"type": "nominal", "field": "name", "sort": "color", "title": "Player Name"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-55bbe34ec99b00387257935316262782": [{"name": "Kawhi Leonard", "team": "LA Clippers", "ppg": 27.1, "bpg": 0.6, "rpg": 7.1}, {"name": "Paul George", "team": "LA Clippers", "ppg": 21.5, "bpg": 0.4, "rpg": 5.2}, {"name": "Montrezl Harrell", "team": "LA Clippers", "ppg": 18.6, "bpg": 1.1, "rpg": 7.1}, {"name": "Pascal Siakam", "team": "Toronto", "ppg": 22.9, "bpg": 0.9, "rpg": 7.3}, {"name": "Kyle Lowry", "team": "Toronto", "ppg": 19.4, "bpg": 0.4, "rpg": 5.0}, {"name": "Fred VanVleet", "team": "Toronto", "ppg": 17.6, "bpg": 0.3, "rpg": 3.8}, {"name": "Giannis Antetokounmpo", "team": "Milwaukee", "ppg": 29.5, "bpg": 1.0, "rpg": 13.6}, {"name": "Khris Middleton", "team": "Milwaukee", "ppg": 20.9, "bpg": 0.1, "rpg": 6.2}, {"name": "Eric Bledsoe", "team": "Milwaukee", "ppg": 14.9, "bpg": 0.4, "rpg": 4.6}, {"name": "Nikola Joki\u0107", "team": "Denver", "ppg": 19.9, "bpg": 0.6, "rpg": 9.7}, {"name": "Jamal Murray", "team": "Denver", "ppg": 18.5, "bpg": 0.3, "rpg": 4.0}, {"name": "Will Barton", "team": "Denver", "ppg": 15.1, "bpg": 0.5, "rpg": 6.3}, {"name": "Jimmy Butler", "team": "Miami", "ppg": 19.9, "bpg": 0.6, "rpg": 6.7}, {"name": "Goran Dragi\u0107", "team": "Miami", "ppg": 16.2, "bpg": 0.2, "rpg": 3.2}, {"name": "Bam Adebayo", "team": "Miami", "ppg": 15.9, "bpg": 1.3, "rpg": 10.2}, {"name": "Anthony Davis", "team": "LA Lakers", "ppg": 26.1, "bpg": 2.3, "rpg": 9.3}, {"name": "LeBron James", "team": "LA Lakers", "ppg": 25.3, "bpg": 0.5, "rpg": 7.8}, {"name": "Kyle Kuzma", "team": "LA Lakers", "ppg": 12.8, "bpg": 0.4, "rpg": 4.5}, {"name": "James Harden", "team": "Houston", "ppg": 34.3, "bpg": 0.9, "rpg": 6.6}, {"name": "Russell Westbrook", "team": "Houston", "ppg": 27.2, "bpg": 0.4, "rpg": 7.9}, {"name": "Eric Gordon", "team": "Houston", "ppg": 14.4, "bpg": 0.3, "rpg": 2.0}, {"name": "Jayson Tatum", "team": "Boston", "ppg": 23.4, "bpg": 0.9, "rpg": 7.0}, {"name": "Kemba Walker", "team": "Boston", "ppg": 20.4, "bpg": 0.5, "rpg": 3.9}, {"name": "Jaylen Brown", "team": "Boston", "ppg": 20.3, "bpg": 0.4, "rpg": 6.4}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
