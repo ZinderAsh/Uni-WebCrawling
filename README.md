@@ -1,6 +1,7 @@
 # Assignment 5
 
 Various scripts for fetching and extracting information from URLs and HTML. Mainly Wikipedia.
+This script was written for a university assignment.
 
 ## Dependencies
 
